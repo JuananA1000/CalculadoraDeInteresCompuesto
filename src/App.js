@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Formik, Form } from 'formik';
+import Input from './components/Input';
 
 const Contenedor = styled.div`
     display: flex;
@@ -16,10 +18,29 @@ const Section = styled.section`
 `;
 
 function App() {
+    const handleSubmit = () => {
+        // code
+    };
+
     return (
         <Contenedor>
             <Section>
                 <h1>Calculadora de Interés Compuesto</h1>
+                <Formik
+                    initialValues={{
+                        deposito: '',
+                        contribucion: '',
+                        años: '',
+                        interes: '',
+                    }}
+                    onSubmit={handleSubmit}>
+                    <Form>
+                        <Input name='deposito' label='Depósito Inicial' />
+                        <Input name='contribucion' label='Contribución Anual' />
+                        <Input name='años' label='Años' />
+                        <Input name='interes' label='Interes Estimado' />
+                    </Form>
+                </Formik>
             </Section>
         </Contenedor>
     );
