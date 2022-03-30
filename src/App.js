@@ -1,6 +1,6 @@
 import { Formik, Form } from 'formik';
 import { useState } from 'react';
-
+import * as Yup from 'yup';
 import Input from './components/Input';
 import Boton from './components/Boton';
 import Contenedor from './components/Contenedor';
@@ -63,7 +63,23 @@ function App() {
                         años: '',
                         interes: '',
                     }}
-                    onSubmit={handleSubmit}>
+                    onSubmit={handleSubmit}
+                    validationSchema={Yup.object({
+                        deposito: Yup.number()
+                            .required('Campo obligatorio')
+                            .typeError('Este campo debe ser un número'),
+                        contribucion: Yup.number()
+                            .required('Campo obligatorio')
+                            .typeError('Este campo debe ser un número'),
+                        años: Yup.number()
+                            .required('Campo obligatorio')
+                            .typeError('Este campo debe ser un número'),
+                        interes: Yup.number()
+                            .required('Campo obligatorio')
+                            .typeError('Este campo debe ser un número')
+                            .min(0, 'El valor mínimo es 0')
+                            .max(1, 'El valor máximo es 1'),
+                    })}>
                     <Form>
                         <Input name='deposito' label='Depósito Inicial' />
                         <Input name='contribucion' label='Contribución Anual' />
