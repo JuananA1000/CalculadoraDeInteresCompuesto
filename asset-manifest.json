@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CalculadoraInteresCompuesto/static/css/main.a5b0e245.css",
+    "main.js": "/CalculadoraInteresCompuesto/static/js/main.9678e0c0.js",
+    "index.html": "/CalculadoraInteresCompuesto/index.html",
+    "main.a5b0e245.css.map": "/CalculadoraInteresCompuesto/static/css/main.a5b0e245.css.map",
+    "main.9678e0c0.js.map": "/CalculadoraInteresCompuesto/static/js/main.9678e0c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5b0e245.css",
+    "static/js/main.9678e0c0.js"
+  ]
+}
